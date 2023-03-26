@@ -16,11 +16,14 @@ namespace PerfumeShop
 {
     public partial class MenuWindow : Form
     {
-        public MenuWindow()
+        public User user { get; set; }
+
+        public MenuWindow(User user)
         {
             InitializeComponent();
             ShowPerfumesForHer();
             ShowPerfumesForHim();
+            this.user = user;
         }
         private void BtnClose_Click(object sender, EventArgs e)
         {
@@ -33,13 +36,14 @@ namespace PerfumeShop
 
         private void BtnAddToCart_Click(object sender, EventArgs e)
         {
-            PerfumeSelected();
+            PerfumeSelectedForHim();
+            PerfumeSelectedForHer();
         }
 
         private void BtnGoToCart_Click(object sender, EventArgs e)
         {
             Hide();
-            ShoppingCart shoppingCart = new ShoppingCart();
+            ShoppingCart shoppingCart = new ShoppingCart(user);
             shoppingCart.Show();
         }
         public void ShowPerfumesForHim()
@@ -100,45 +104,19 @@ namespace PerfumeShop
             FirstWindow firstWindow = new FirstWindow();
             firstWindow.Show();
         }
-        private int GetUserId(string email)
+       
+
+        private void PerfumeSelectedForHim()
         {
-            try
-            {
-                string connString = "Server=localhost;Port=5432;Database=PerfumeShop;User Id=postgres;Password=d8ebad343;";
-                using (NpgsqlConnection conn = new NpgsqlConnection(connString))
-                {
-                    conn.Open();
-
-                    using (NpgsqlCommand cmd = new NpgsqlCommand("SELECT id FROM users WHERE email = @email", conn))
-                    {
-                        cmd.Parameters.AddWithValue("@email", email);
-                        object result = cmd.ExecuteScalar();
-                        if (result != null)
-                        {
-                            int userId = Convert.ToInt32(result);
-                            return userId;
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-            return -1; // Return -1 if the user is not found or an error occurred
-        }
-
-        private void PerfumeSelected()
-        {
-            if (DGVHim.CurrentRow == null)
+            if (DGVHim.CurrentRow == null )
                 return;
 
             int perfumeId = (int)DGVHim.CurrentRow.Cells["Id"].Value;
             string perfumeName = DGVHim.CurrentRow.Cells["Name"].Value.ToString();
             string perfumeCompany = DGVHim.CurrentRow.Cells["Company"].Value.ToString();
             string perfumeGender = DGVHim.CurrentRow.Cells["Gender"].Value.ToString();
-            double perfumePrice = (double)DGVHim.CurrentRow.Cells["Price"].Value;
+            string perfumePrice = DGVHim.CurrentRow.Cells["Price"].Value.ToString();
+            double price = Convert.ToDouble(perfumePrice);
 
             // Insert the selected perfume into the shopping cart for the currently logged in user
             try
@@ -149,10 +127,7 @@ namespace PerfumeShop
                     conn.Open();
 
                     // Get the currently logged in user's ID
-                    User user = new User();
-                    string email = user.GetEmail();
-                    int userId = GetUserId(email);
-
+                    int userId = user.GetId();
 
                     // Insert the selected perfume into the shopping cart for the current user
                     using (NpgsqlCommand cmd = new NpgsqlCommand("INSERT INTO shopping_cart(user_id, perfume_id) VALUES (@userId, @perfumeId)", conn))
@@ -172,7 +147,48 @@ namespace PerfumeShop
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        
+        private void PerfumeSelectedForHer()
+        {
+            if (DGVHer.CurrentRow == null)
+                return;
+
+            int perfumeId = (int)DGVHer.CurrentRow.Cells["Id"].Value;
+            string perfumeName = DGVHer.CurrentRow.Cells["Name"].Value.ToString();
+            string perfumeCompany = DGVHer.CurrentRow.Cells["Company"].Value.ToString();
+            string perfumeGender = DGVHer.CurrentRow.Cells["Gender"].Value.ToString();
+            string perfumePrice = DGVHer.CurrentRow.Cells["Price"].Value.ToString();
+            double price = Convert.ToDouble(perfumePrice);
+
+            // Insert the selected perfume into the shopping cart for the currently logged in user
+            try
+            {
+                string connString = "Server=localhost;Port=5432;Database=PerfumeShop;User Id=postgres;Password=d8ebad343;";
+                using (NpgsqlConnection conn = new NpgsqlConnection(connString))
+                {
+                    conn.Open();
+
+                    // Get the currently logged in user's ID
+                    int userId = user.GetId();
+
+                    // Insert the selected perfume into the shopping cart for the current user
+                    using (NpgsqlCommand cmd = new NpgsqlCommand("INSERT INTO shopping_cart(user_id, perfume_id) VALUES (@userId, @perfumeId)", conn))
+                    {
+                        cmd.Parameters.AddWithValue("@userId", userId);
+                        cmd.Parameters.AddWithValue("@perfumeId", perfumeId);
+                        cmd.ExecuteNonQuery();
+
+                        // Show a success message
+                        MessageBox.Show($"Perfume '{perfumeName}' added to shopping cart", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Show an error message
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
 
     }
 }

@@ -28,25 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.DGVHim = new System.Windows.Forms.DataGridView();
+            this.dgvShoppingCart = new System.Windows.Forms.DataGridView();
             this.BtnBackToMenuWindow = new System.Windows.Forms.Button();
             this.BtnClose = new System.Windows.Forms.Button();
             this.BtnRemoveItem = new System.Windows.Forms.Button();
             this.BtnDeleteItems = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.DGVHim)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvShoppingCart)).BeginInit();
             this.SuspendLayout();
             // 
-            // DGVHim
+            // dgvShoppingCart
             // 
-            this.DGVHim.BackgroundColor = System.Drawing.Color.White;
-            this.DGVHim.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGVHim.Location = new System.Drawing.Point(267, 216);
-            this.DGVHim.Name = "DGVHim";
-            this.DGVHim.RowHeadersWidth = 62;
-            this.DGVHim.RowTemplate.Height = 28;
-            this.DGVHim.Size = new System.Drawing.Size(698, 447);
-            this.DGVHim.TabIndex = 15;
+            this.dgvShoppingCart.BackgroundColor = System.Drawing.Color.White;
+            this.dgvShoppingCart.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvShoppingCart.Location = new System.Drawing.Point(267, 216);
+            this.dgvShoppingCart.Name = "dgvShoppingCart";
+            this.dgvShoppingCart.RowHeadersWidth = 62;
+            this.dgvShoppingCart.RowTemplate.Height = 28;
+            this.dgvShoppingCart.Size = new System.Drawing.Size(698, 447);
+            this.dgvShoppingCart.TabIndex = 15;
             // 
             // BtnBackToMenuWindow
             // 
@@ -108,6 +108,7 @@
             this.BtnDeleteItems.TabIndex = 19;
             this.BtnDeleteItems.Text = "Delete all items";
             this.BtnDeleteItems.UseVisualStyleBackColor = true;
+            this.BtnDeleteItems.Click += new System.EventHandler(this.BtnDeleteItems_Click);
             // 
             // label1
             // 
@@ -132,7 +133,7 @@
             this.Controls.Add(this.BtnRemoveItem);
             this.Controls.Add(this.BtnClose);
             this.Controls.Add(this.BtnBackToMenuWindow);
-            this.Controls.Add(this.DGVHim);
+            this.Controls.Add(this.dgvShoppingCart);
             this.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Bold);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(165)))), ((int)(((byte)(169)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -140,7 +141,7 @@
             this.Name = "ShoppingCart";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ShoppingCart";
-            ((System.ComponentModel.ISupportInitialize)(this.DGVHim)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvShoppingCart)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -148,7 +149,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView DGVHim;
+        private System.Windows.Forms.DataGridView dgvShoppingCart;
         private System.Windows.Forms.Button BtnBackToMenuWindow;
         private System.Windows.Forms.Button BtnClose;
         private System.Windows.Forms.Button BtnRemoveItem;

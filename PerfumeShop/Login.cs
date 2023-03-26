@@ -67,23 +67,27 @@ namespace PerfumeShop
             {
                 string email = TxtEmail.Text;
                 string password = TxtPassword.Text;
+                int id;
 
                 string connString = "Server=localhost;Port=5432;Database=PerfumeShop;User Id=postgres;Password=d8ebad343;";
                 using (NpgsqlConnection conn = new NpgsqlConnection(connString))
                 {
                     conn.Open();
 
-                    using (NpgsqlCommand cmd = new NpgsqlCommand("SELECT COUNT(*) FROM users WHERE email = @email AND password = @password", conn))
+                    using (NpgsqlCommand cmd = new NpgsqlCommand("SELECT id FROM users WHERE email = @email AND password = @password", conn))
                     {
                         cmd.Parameters.AddWithValue("@email", email);
                         cmd.Parameters.AddWithValue("@password", password);
 
-                        int count = Convert.ToInt32(cmd.ExecuteScalar());
+                        // Execute the query and retrieve the user ID
+                        id = (int?)cmd.ExecuteScalar() ?? 0;
 
-                        if (count == 1)
+                        if (id != 0)
                         {
+                            // Create a User object and pass it to MenuWindow
+                            User user = new User(id, email, password);
                             MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            MenuWindow menuWindow = new MenuWindow();
+                            MenuWindow menuWindow = new MenuWindow(user);
                             menuWindow.Show();
                         }
                         else
@@ -98,6 +102,8 @@ namespace PerfumeShop
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+
 
     }
 
