@@ -41,11 +41,11 @@
             // 
             this.dgvShoppingCart.BackgroundColor = System.Drawing.Color.White;
             this.dgvShoppingCart.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvShoppingCart.Location = new System.Drawing.Point(267, 216);
+            this.dgvShoppingCart.Location = new System.Drawing.Point(248, 169);
             this.dgvShoppingCart.Name = "dgvShoppingCart";
             this.dgvShoppingCart.RowHeadersWidth = 62;
             this.dgvShoppingCart.RowTemplate.Height = 28;
-            this.dgvShoppingCart.Size = new System.Drawing.Size(698, 447);
+            this.dgvShoppingCart.Size = new System.Drawing.Size(371, 447);
             this.dgvShoppingCart.TabIndex = 15;
             // 
             // BtnBackToMenuWindow
@@ -54,7 +54,7 @@
             this.BtnBackToMenuWindow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnBackToMenuWindow.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.BtnBackToMenuWindow.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
-            this.BtnBackToMenuWindow.Location = new System.Drawing.Point(643, 728);
+            this.BtnBackToMenuWindow.Location = new System.Drawing.Point(469, 733);
             this.BtnBackToMenuWindow.Margin = new System.Windows.Forms.Padding(4);
             this.BtnBackToMenuWindow.Name = "BtnBackToMenuWindow";
             this.BtnBackToMenuWindow.Size = new System.Drawing.Size(305, 74);
@@ -70,10 +70,10 @@
             this.BtnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.BtnClose.ForeColor = System.Drawing.Color.White;
-            this.BtnClose.Location = new System.Drawing.Point(978, 728);
+            this.BtnClose.Location = new System.Drawing.Point(469, 634);
             this.BtnClose.Margin = new System.Windows.Forms.Padding(4);
             this.BtnClose.Name = "BtnClose";
-            this.BtnClose.Size = new System.Drawing.Size(234, 74);
+            this.BtnClose.Size = new System.Drawing.Size(305, 74);
             this.BtnClose.TabIndex = 17;
             this.BtnClose.Text = "Close";
             this.BtnClose.UseVisualStyleBackColor = false;
@@ -86,7 +86,7 @@
             this.BtnRemoveItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnRemoveItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.BtnRemoveItem.ForeColor = System.Drawing.Color.White;
-            this.BtnRemoveItem.Location = new System.Drawing.Point(325, 728);
+            this.BtnRemoveItem.Location = new System.Drawing.Point(97, 733);
             this.BtnRemoveItem.Margin = new System.Windows.Forms.Padding(4);
             this.BtnRemoveItem.Name = "BtnRemoveItem";
             this.BtnRemoveItem.Size = new System.Drawing.Size(289, 74);
@@ -101,10 +101,10 @@
             this.BtnDeleteItems.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnDeleteItems.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.BtnDeleteItems.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
-            this.BtnDeleteItems.Location = new System.Drawing.Point(22, 728);
+            this.BtnDeleteItems.Location = new System.Drawing.Point(97, 634);
             this.BtnDeleteItems.Margin = new System.Windows.Forms.Padding(4);
             this.BtnDeleteItems.Name = "BtnDeleteItems";
-            this.BtnDeleteItems.Size = new System.Drawing.Size(269, 74);
+            this.BtnDeleteItems.Size = new System.Drawing.Size(289, 74);
             this.BtnDeleteItems.TabIndex = 19;
             this.BtnDeleteItems.Text = "Delete all items";
             this.BtnDeleteItems.UseVisualStyleBackColor = true;
@@ -115,7 +115,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
-            this.label1.Location = new System.Drawing.Point(425, 62);
+            this.label1.Location = new System.Drawing.Point(190, 44);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(508, 52);
             this.label1.TabIndex = 20;
@@ -127,7 +127,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1248, 849);
+            this.ClientSize = new System.Drawing.Size(949, 849);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.BtnDeleteItems);
             this.Controls.Add(this.BtnRemoveItem);
