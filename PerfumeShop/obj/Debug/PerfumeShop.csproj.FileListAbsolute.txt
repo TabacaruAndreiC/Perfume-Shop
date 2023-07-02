@@ -94,3 +94,6 @@ D:\github\PerfumeShop\obj\Debug\PerfumeShop.csproj.CoreCompileInputs.cache
 D:\github\PerfumeShop\obj\Debug\PerfumeShop.csproj.CopyComplete
 D:\github\PerfumeShop\obj\Debug\PerfumeShop.exe
 D:\github\PerfumeShop\obj\Debug\PerfumeShop.pdb
+D:\github\PerfumeShop\obj\Debug\PerfumeShop.AdminMenuWindow.resources
+D:\github\PerfumeShop\obj\Debug\PerfumeShop.AdminPerfumesList.resources
+D:\github\PerfumeShop\obj\Debug\PerfumeShop.AdminUsersList.resources

@@ -80,8 +80,8 @@ namespace PerfumeShop
         private void BtnBackToFirstWindow_Click(object sender, EventArgs e)
         {
             Hide();
-            FirstWindow firstWindow = new FirstWindow();
-            firstWindow.Show();
+            AdminMenuWindow adminMenuWindow = new AdminMenuWindow();
+            adminMenuWindow.Show();
         }
     }
 }

@@ -39,8 +39,8 @@ public partial class AdminPasswordWindow : Form
             if (TxtPassword.Text == password)
             {
                 Hide();
-                AddPerfume addPerfume = new AddPerfume();
-                addPerfume.Show();
+                AdminMenuWindow adminMenuWindow = new AdminMenuWindow();
+                adminMenuWindow.Show();
             }
             else
             {

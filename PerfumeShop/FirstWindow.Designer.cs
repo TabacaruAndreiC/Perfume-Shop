@@ -107,7 +107,7 @@
             this.AddPerfume.Name = "AddPerfume";
             this.AddPerfume.Size = new System.Drawing.Size(281, 78);
             this.AddPerfume.TabIndex = 4;
-            this.AddPerfume.Text = "Add perfume as admin";
+            this.AddPerfume.Text = "Open admin window";
             this.AddPerfume.UseVisualStyleBackColor = true;
             this.AddPerfume.Click += new System.EventHandler(this.AddPerfume_Click);
             // 

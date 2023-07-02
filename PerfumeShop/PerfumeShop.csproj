@@ -100,11 +100,29 @@
     <Compile Include="AddPerfume.Designer.cs">
       <DependentUpon>AddPerfume.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminMenuWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminMenuWindow.Designer.cs">
+      <DependentUpon>AdminMenuWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminPasswordWindow.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AdminPasswordWindow.Designer.cs">
       <DependentUpon>AdminPasswordWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPerfumesList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminPerfumesList.Designer.cs">
+      <DependentUpon>AdminPerfumesList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminUsersList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminUsersList.Designer.cs">
+      <DependentUpon>AdminUsersList.cs</DependentUpon>
     </Compile>
     <Compile Include="FirstWindow.cs">
       <SubType>Form</SubType>
@@ -143,8 +161,17 @@
     <EmbeddedResource Include="AddPerfume.resx">
       <DependentUpon>AddPerfume.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AdminMenuWindow.resx">
+      <DependentUpon>AdminMenuWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AdminPasswordWindow.resx">
       <DependentUpon>AdminPasswordWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPerfumesList.resx">
+      <DependentUpon>AdminPerfumesList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminUsersList.resx">
+      <DependentUpon>AdminUsersList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FirstWindow.resx">
       <DependentUpon>FirstWindow.cs</DependentUpon>
